@@ -1,0 +1,273 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/life_screen.gd" id="1_life"]
+
+[node name="LifeScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_life")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.972549, 0.968627, 0.956863, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 16
+
+[node name="Root" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TopRow" type="HBoxContainer" parent="Margin/Root"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="NameLabel" type="Label" parent="Margin/Root/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 18
+text = "——"
+
+[node name="DayLabel" type="Label" parent="Margin/Root/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.44, 0.44, 0.44, 1)
+theme_override_font_sizes/font_size = 13
+text = "第 1 天"
+vertical_alignment = 1
+
+[node name="ClockLabel" type="Label" parent="Margin/Root/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 18
+text = "10:30"
+
+[node name="PeriodLabel" type="Label" parent="Margin/Root/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.62, 0.62, 1)
+theme_override_font_sizes/font_size = 13
+text = "早上"
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Margin/Root/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MoneyLabel" type="Label" parent="Margin/Root/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 14
+text = "¥600"
+vertical_alignment = 1
+
+[node name="StaminaLabel" type="Label" parent="Margin/Root/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 14
+text = "体力 100"
+vertical_alignment = 1
+
+[node name="InspLabel" type="Label" parent="Margin/Root/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 14
+text = "灵感 20"
+vertical_alignment = 1
+
+[node name="CompletionLabel" type="Label" parent="Margin/Root"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.44, 0.44, 0.44, 1)
+theme_override_font_sizes/font_size = 11
+text = "完成度 15.0%"
+autowrap_mode = 2
+
+[node name="Sep1" type="HSeparator" parent="Margin/Root"]
+layout_mode = 2
+
+[node name="LocationLabel" type="Label" parent="Margin/Root"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 15
+text = "出租屋"
+
+[node name="ObjectRow" type="HBoxContainer" parent="Margin/Root"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ClueLabel" type="Label" parent="Margin/Root"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.478431, 0.415686, 0.352941, 1)
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 2
+
+[node name="Sep2" type="HSeparator" parent="Margin/Root"]
+layout_mode = 2
+
+[node name="LogLabel" type="Label" parent="Margin/Root"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.44, 0.44, 0.44, 1)
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 2
+vertical_alignment = 0
+
+[node name="ActionPopup" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 1
+anchors_preset = 0
+offset_left = 120.0
+offset_top = 150.0
+offset_right = 500.0
+offset_bottom = 340.0
+
+[node name="PopupMargin" type="MarginContainer" parent="ActionPopup"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="PopupBox" type="VBoxContainer" parent="ActionPopup/PopupMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PopupHeader" type="HBoxContainer" parent="ActionPopup/PopupMargin/PopupBox"]
+layout_mode = 2
+
+[node name="PopupTitle" type="Label" parent="ActionPopup/PopupMargin/PopupBox/PopupHeader"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 14
+text = "电脑"
+
+[node name="PopupClose" type="Button" parent="ActionPopup/PopupMargin/PopupBox/PopupHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "×"
+
+[node name="PopupScroll" type="ScrollContainer" parent="ActionPopup/PopupMargin/PopupBox"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="PopupList" type="VBoxContainer" parent="ActionPopup/PopupMargin/PopupBox/PopupScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Sep3" type="HSeparator" parent="Margin/Root"]
+layout_mode = 2
+
+[node name="TravelLabel" type="Label" parent="Margin/Root"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.62, 0.62, 1)
+theme_override_font_sizes/font_size = 11
+text = "出门"
+
+[node name="TravelRow" type="HBoxContainer" parent="Margin/Root"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SettlePanel" type="PanelContainer" parent="Margin/Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="SettleMargin" type="MarginContainer" parent="Margin/Root/SettlePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="SettleBox" type="VBoxContainer" parent="Margin/Root/SettlePanel/SettleMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SlotsRow" type="HBoxContainer" parent="Margin/Root/SettlePanel/SettleMargin/SettleBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PreviewLabel" type="Label" parent="Margin/Root/SettlePanel/SettleMargin/SettleBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.44, 0.44, 0.44, 1)
+theme_override_font_sizes/font_size = 11
+autowrap_mode = 2
+
+[node name="SettleButtonRow" type="HBoxContainer" parent="Margin/Root/SettlePanel/SettleMargin/SettleBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="ClearButton" type="Button" parent="Margin/Root/SettlePanel/SettleMargin/SettleBox/SettleButtonRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "清空"
+
+[node name="SettleButton" type="Button" parent="Margin/Root/SettlePanel/SettleMargin/SettleBox/SettleButtonRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "结算"
+
+[node name="BottomRow" type="HBoxContainer" parent="Margin/Root"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="TitleButton" type="Button" parent="Margin/Root/BottomRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "回标题"
+
+[node name="SleepButton" type="Button" parent="Margin/Root/BottomRow"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(112, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "睡觉"

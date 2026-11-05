@@ -1,0 +1,157 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/name_input_panel.gd" id="1_name"]
+
+[node name="NameInputPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_name")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.972549, 0.968627, 0.956863, 0.94)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 14
+
+[node name="Box" type="VBoxContainer" parent="Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="HeaderRow" type="HBoxContainer" parent="Center/Panel/Margin/Box"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleText" type="Label" parent="Center/Panel/Margin/Box/HeaderRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 16
+text = "你叫什么"
+vertical_alignment = 1
+
+[node name="NamePreview" type="Label" parent="Center/Panel/Margin/Box/HeaderRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 24
+text = "陆知行"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="Center/Panel/Margin/Box/HeaderRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "×"
+
+[node name="NameHint" type="Label" parent="Center/Panel/Margin/Box"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.52, 0.35, 1)
+theme_override_font_sizes/font_size = 12
+text = "按「就叫这个」开始"
+horizontal_alignment = 1
+
+[node name="Sep1" type="HSeparator" parent="Center/Panel/Margin/Box"]
+layout_mode = 2
+
+[node name="PinyinRow" type="HBoxContainer" parent="Center/Panel/Margin/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Sep2" type="HSeparator" parent="Center/Panel/Margin/Box"]
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Center/Panel/Margin/Box"]
+custom_minimum_size = Vector2(0, 168)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="CharGrid" type="GridContainer" parent="Center/Panel/Margin/Box/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = 3
+columns = 16
+
+[node name="Sep3" type="HSeparator" parent="Center/Panel/Margin/Box"]
+layout_mode = 2
+
+[node name="SymbolLabel" type="Label" parent="Center/Panel/Margin/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "符号"
+
+[node name="SymbolRow" type="HBoxContainer" parent="Center/Panel/Margin/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="ButtonRow" type="HBoxContainer" parent="Center/Panel/Margin/Box"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BackspaceButton" type="Button" parent="Center/Panel/Margin/Box/ButtonRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(84, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "删除"
+
+[node name="ClearNameButton" type="Button" parent="Center/Panel/Margin/Box/ButtonRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(84, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "清空"
+
+[node name="Spacer" type="Control" parent="Center/Panel/Margin/Box/ButtonRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameCancelButton" type="Button" parent="Center/Panel/Margin/Box/ButtonRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "取消"
+
+[node name="NameConfirmButton" type="Button" parent="Center/Panel/Margin/Box/ButtonRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "就叫这个"
