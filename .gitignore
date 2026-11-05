@@ -1,0 +1,34 @@
+# ---- Godot 缓存（可随时重建，不要提交）----
+.godot/
+*.translation
+
+# ---- 历史归档与移出工程的参考素材 ----
+# 见 README.md「文件在哪」。这些是手工备份，不是游戏资源。
+# 该目录已有 .gdignore，Godot 不扫描；这里再挡一次 git。
+备份/
+
+# ---- Python ----
+__pycache__/
+*.pyc
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---- Godot 导出的构建产物 ----
+export/
+build/
+*.pck
+*.zip
+
+# ---- 本地存档（实际写在 user:// 下，这里只是兜底）----
+save/
+
+# ---- 敏感信息：绝不提交凭证或本地覆写 ----
+.env
+*.token
+*.key
+.godot-credentials
