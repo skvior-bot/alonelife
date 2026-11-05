@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="一个人的独居生活"
+config/description="SLG+Gal 独立游戏——毕业后100天内完成游戏开发"
+run/main_scene="res://scenes/title_screen.tscn"
+config/features=PackedStringArray("4.7")
+boot_splash/show_image=false
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/managers/GameManager.gd"
+TimeSystem="*res://scripts/managers/TimeSystem.gd"
+DataManager="*res://scripts/managers/DataManager.gd"
+EventSystem="*res://scripts/managers/EventSystem.gd"
+ResourceManager="*res://scripts/managers/ResourceManager.gd"
+GameState="*res://scripts/managers/GameState.gd"
+
+[display]
+
+window/size/viewport_width=1560
+window/size/viewport_height=768
+window/size/window_width_override=1560
+window/size/window_height_override=768
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
