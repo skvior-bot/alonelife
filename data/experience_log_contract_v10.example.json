@@ -1,0 +1,40 @@
+{
+  "version": "v10-experience-log-planning-only",
+  "status": "reference_spec_not_game_runtime",
+  "description": "存在痕迹与个人回忆日志的设计接口；非新增数值。",
+  "sample_entry": {
+    "schema_version": 1,
+    "entry_id": "memory_run_001_0012",
+    "event_id": "MEDIA_COMPLETE_AN01",
+    "day": 3,
+    "minute_of_day": 1240,
+    "location_id": "apartment",
+    "participants": [
+      "outer_protagonist"
+    ],
+    "kind": "entertainment_complete",
+    "summary_key": "memory.media.AN01",
+    "asset_key": "covers/AN01",
+    "tags": [
+      "solo",
+      "entertainment"
+    ],
+    "choice_id": null,
+    "state_delta_refs": [
+      "completed_media.AN01"
+    ]
+  },
+  "sample_companion_state": {
+    "char_id": "xumian",
+    "encounter_state": "unseen",
+    "story_stage": 0,
+    "recruited": false,
+    "is_available_today": false
+  },
+  "suggested_criteria": {
+    "events_only_if_occurred": true,
+    "auto_recruit_on_progress": false,
+    "memory_no_new_stat": true,
+    "never_lockout_on_one_missed_day": true
+  }
+}
